@@ -25,10 +25,14 @@ export const IncomeTracker = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-red-500 p-6">
       <h1 className="text-2xl text-blue font-bold text-center mb-4">
         Income Tracker
       </h1>
+
+      <div class="bg-red-500 text-white p-4">
+        This should have a red background.
+      </div>
 
       <form
         onSubmit={handleSubmit}

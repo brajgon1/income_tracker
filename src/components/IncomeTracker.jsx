@@ -30,7 +30,7 @@ export const IncomeTracker = () => {
         Income Tracker
       </h1>
 
-      <div class="bg-red-500 text-white p-4">
+      <div className="bg-red-500 text-white p-4">
         This should have a red background.
       </div>
 

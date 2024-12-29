@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export const IncomeTracker = () => {
-  const [income, setIncome] = React.useState([]);
-  const [formData, setFormData] = React.useState({
+  const [income, setIncome] = useState([]);
+  const [formData, setFormData] = useState({
     source: "",
     amount: "",
     date: "",

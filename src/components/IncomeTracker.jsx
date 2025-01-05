@@ -34,6 +34,10 @@ export const IncomeTracker = () => {
         This should have a red background.
       </div>
 
+      <div className="bg-blue-500 text-white p-4">
+        Add a new income entry.
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mb-6"

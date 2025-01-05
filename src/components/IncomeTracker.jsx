@@ -30,9 +30,9 @@ export const IncomeTracker = () => {
         Income Tracker
       </h1>
 
-      <div className="bg-red-500 text-white p-4">
+      {/* <div className="bg-red-500 text-white p-4">
         This should have a red background.
-      </div>
+      </div> */}
 
       <div className="bg-blue-500 text-white p-4">
         Add a new income entry.

@@ -26,11 +26,11 @@ export const IncomeTracker = () => {
 
   return (
     <div className="min-h-screen bg-white-500 p-6">
-      <h1 className="text-2xl underline font-bold text-center mb-4">
+      <h1 className="text-2xl font-poppins font-bold text-center mb-4">
         Income Tracker
       </h1>
 
-      <div className="bg-white-400 text-black p-4 mb-4 w-80 mx-auto">
+      <div className="bg-white-400 font-poppins text-black p-4 mb-4 w-80 mx-auto">
         Add a new income entry.
       </div>
 
@@ -39,7 +39,7 @@ export const IncomeTracker = () => {
         className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mb-6 mt-4"
       >
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="source">
+          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="source">
             Source
           </label>
           <input
@@ -54,7 +54,7 @@ export const IncomeTracker = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="amount">
+          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="amount">
             Amount
           </label>
           <input
@@ -70,7 +70,7 @@ export const IncomeTracker = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="date">
+          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="date">
             Date
           </label>
           <input
@@ -84,7 +84,7 @@ export const IncomeTracker = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="category">
+          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="category">
             Category
           </label>
           <select

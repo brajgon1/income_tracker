@@ -10,6 +10,9 @@ module.exports = {
         roseQuartz: "#998DA0",
         wenge: "#63585E",
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],

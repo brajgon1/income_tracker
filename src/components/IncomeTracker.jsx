@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 
 export const IncomeTracker = () => {
-  const [income, setIncome] = useState([]);
-  const [formData, setFormData] = useState({
-    source: "",
-    amount: "",
-    date: "",
-    category: "",
-  });
+  const [rows, setRows] = useState([
+    { source: "", amount: "", date: "", category: "" },
+  ]);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (index, e) => {
+    const updatedRows = rows.map((row, i) =>
+      i === index ? { ...row, [e.target.name]: e.target.value } : row
+    );
+    setRows(updatedRows);
+  };
+
+  const handleAddRow = () => {
+    setRows([...rows, { source: "", amount: "", date: "", category: "" }]);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIncome([...income, formData]);
-    setFormData({
-      source: "",
-      amount: "",
-      date: "",
-      category: "",
-    });
+    console.log("Income Data:", rows);
+    setRows([{ source: "", amount: "", date: "", category: "" }]);
+  };
+  const handleDeleteRow = (index) => {
+    const updatedRows = rows.filter((_, i) => i !== index);
+    setRows(updatedRows);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-frenchGray to-transparent h-32 w-full p-6">
+    <div className="min-h-screen font-poppins bg-gradient-to-r from-frenchGray to-transparent h-32 w-full p-6">
       <h1 className="text-2xl font-poppins font-bold text-center mb-4">
         Income Tracker
       </h1>
@@ -36,82 +38,83 @@ export const IncomeTracker = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mb-6 mt-4"
+        className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mb-6 mt-4"
       >
-        <div className="mb-4">
-          <label
-            className="block font-poppins text-sm font-medium mb-2"
-            htmlFor="source"
-          >
-            Source
-          </label>
-          <input
-            type="text"
-            id="source"
-            name="source"
-            value={formData.source}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., Salary, Freelance"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block font-poppins text-sm font-medium mb-2"
-            htmlFor="amount"
-          >
-            Amount
-          </label>
-          <input
-            type="number"
-            id="amount"
-            name="amount"
-            value={formData.amount}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., 5000"
-            required
-          />
-        </div>
+        <table className="table-auto w-full border-collapse border border-gray-200 ">
+          <thead>
+            <tr className="bg-gray-100 font-poppins">
+              <th className="border border-gray-200 p-2">Source</th>
+              <th className="border border-gray-200 p-2">Amount</th>
+              <th className="border border-gray-200 p-2">Date</th>
+              <th className="border border-gray-200 p-2">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i}>
+                <td className="border border-gray-300 px-2 py1">
+                  <input
+                    type="text"
+                    name="source"
+                    value={row.source}
+                    onChange={(e) => handleChange(i, e)}
+                    className="w-full px-2 py-1 border rounded"
+                    required
+                  />
+                </td>
+                <td className="border border-gray-300 px-2 py1">
+                  <input
+                    type="number"
+                    name="amount"
+                    value={row.amount}
+                    onChange={(e) => handleChange(i, e)}
+                    className="w-full px-2 py-1 border rounded"
+                    required
+                  />
+                </td>
+                <td className="border border-gray-300 px-2 py1">
+                  <input
+                    type="date"
+                    name="date"
+                    value={row.date}
+                    onChange={(e) => handleChange(i, e)}
+                    className="w-full px-2 py-1 border rounded"
+                    required
+                  />
+                </td>
+                <td className="border border-gray-300 px-2 py1">
+                  <select
+                    name="category"
+                    value={row.category}
+                    onChange={(e) => handleChange(i, e)}
+                    className="w-full px-2 py-1 border rounded"
+                    required
+                  >
+                    <option value=""></option>
+                    <option value="business">Business</option>
+                    <option value="personal">Personal</option>
+                    <option value="investment">Investment</option>
+                  </select>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-        <div className="mb-4">
-          <label
-            className="block font-poppins text-sm font-medium mb-2"
-            htmlFor="date"
+        <div className="flex justify-between mt-4">
+          <button
+            type="button"
+            onClick={handleAddRow}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
-            Date
-          </label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block font-poppins text-sm font-medium mb-2"
-            htmlFor="category"
+            Add Another Expense
+          </button>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
-            Category
-          </label>
-          <select
-            id="category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          >
-            <option value="">Select a category</option>
-            <option value="business">Business</option>
-            <option value="personal">Personal</option>
-            <option value="investment">Investment</option>
-          </select>
+            Save Income
+          </button>
         </div>
       </form>
     </div>

@@ -25,7 +25,7 @@ export const IncomeTracker = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white-500 p-6">
+    <div className="min-h-screen bg-gradient-to-r from-frenchGray to-ashGray h-32 w-full p-6">
       <h1 className="text-2xl font-poppins font-bold text-center mb-4">
         Income Tracker
       </h1>
@@ -39,7 +39,10 @@ export const IncomeTracker = () => {
         className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mb-6 mt-4"
       >
         <div className="mb-4">
-          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="source">
+          <label
+            className="block font-poppins text-sm font-medium mb-2"
+            htmlFor="source"
+          >
             Source
           </label>
           <input
@@ -54,7 +57,10 @@ export const IncomeTracker = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="amount">
+          <label
+            className="block font-poppins text-sm font-medium mb-2"
+            htmlFor="amount"
+          >
             Amount
           </label>
           <input
@@ -70,7 +76,10 @@ export const IncomeTracker = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="date">
+          <label
+            className="block font-poppins text-sm font-medium mb-2"
+            htmlFor="date"
+          >
             Date
           </label>
           <input
@@ -79,12 +88,15 @@ export const IncomeTracker = () => {
             name="date"
             value={formData.date}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block font-poppins text-sm font-medium mb-2" htmlFor="category">
+          <label
+            className="block font-poppins text-sm font-medium mb-2"
+            htmlFor="category"
+          >
             Category
           </label>
           <select

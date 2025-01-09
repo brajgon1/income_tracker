@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ReactComponent as DeleteIcon } from "../assets/delete.svg";
 
 export const IncomeTracker = () => {
   const [rows, setRows] = useState([
@@ -21,6 +22,7 @@ export const IncomeTracker = () => {
     console.log("Income Data:", rows);
     setRows([{ source: "", amount: "", date: "", category: "" }]);
   };
+
   const handleDeleteRow = (index) => {
     const updatedRows = rows.filter((_, i) => i !== index);
     setRows(updatedRows);
@@ -101,7 +103,7 @@ export const IncomeTracker = () => {
           </tbody>
         </table>
 
-        <div className="flex justify-between mt-4">
+        <div className="flex flex-row gap-1 mt-4">
           <button
             type="button"
             onClick={handleAddRow}
@@ -114,6 +116,13 @@ export const IncomeTracker = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Save Income
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDeleteRow(rows.length - 1)}
+            className="hover:translate-x-0 text-white font-bold py-2 px-4 rounded"
+          >
+            <DeleteIcon className="w-7 h-7 mr-1" />
           </button>
         </div>
       </form>

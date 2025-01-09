@@ -25,7 +25,7 @@ export const IncomeTracker = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-frenchGray to-ashGray h-32 w-full p-6">
+    <div className="min-h-screen bg-gradient-to-r from-frenchGray to-transparent h-32 w-full p-6">
       <h1 className="text-2xl font-poppins font-bold text-center mb-4">
         Income Tracker
       </h1>

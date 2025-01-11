@@ -42,6 +42,22 @@ export const IncomeTracker = () => {
         >
           Add Row
         </button>
+      </div> */}    
+
+      {/* <div className="flex justify-between gap-4">
+        <button
+          type="button"
+          onClick={handleAddRow}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          Add Another Income
+        </button>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          Save
+        </button>
       </div> */}
 
       <div className="bg-white-400 font-poppins text-black p-4 mb-4 w-80 mx-auto">

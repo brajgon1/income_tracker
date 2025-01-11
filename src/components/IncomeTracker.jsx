@@ -60,9 +60,7 @@ export const IncomeTracker = () => {
         </button>
       </div> */}
 
-      <div className="bg-white-400 font-poppins text-black p-4 mb-4 w-80 mx-auto">
-        Add a new income entry.
-      </div>
+      
 
       <form
         onSubmit={handleSubmit}

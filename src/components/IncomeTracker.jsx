@@ -34,34 +34,6 @@ export const IncomeTracker = () => {
         Income Tracker
       </h1>
 
-      {/* <div className="flex justify-end gap-4">
-        <button
-          type="button"
-          onClick={handleAddRow}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-        >
-          Add Row
-        </button>
-      </div> */}    
-
-      {/* <div className="flex justify-between gap-4">
-        <button
-          type="button"
-          onClick={handleAddRow}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-        >
-          Add Another Income
-        </button>
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-        >
-          Save
-        </button>
-      </div> */}
-
-      
-
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mb-6 mt-4"
@@ -95,6 +67,7 @@ export const IncomeTracker = () => {
                     value={row.amount}
                     onChange={(e) => handleChange(i, e)}
                     className="w-full px-2 py-1 border rounded"
+                    min="1"
                     required
                   />
                 </td>
@@ -117,8 +90,8 @@ export const IncomeTracker = () => {
                     required
                   >
                     <option value=""></option>
-                    <option value="business">Business</option>
-                    <option value="personal">Personal</option>
+                    <option value="business">Business Income</option>
+                    <option value="personal">Personal Income</option>
                     <option value="investment">Investment</option>
                   </select>
                 </td>
@@ -127,27 +100,29 @@ export const IncomeTracker = () => {
           </tbody>
         </table>
 
-        <div className="flex flex-row gap-1 mt-4">
-          <button
-            type="button"
-            onClick={handleAddRow}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Add
-          </button>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            onClick={() => handleDeleteRow(rows.length - 1)}
-            className="hover:translate-x-0 text-white font-bold py-2 px-4 rounded"
-          >
-            <DeleteIcon className="w-7 h-7 mr-1" />
-          </button>
+        <div className="flex flex-row justify-end gap-1 mt-4">
+          <div className="flex flex-row gap-1 mt-4">
+            <button
+              type="button"
+              onClick={handleAddRow}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Add
+            </button>
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={() => handleDeleteRow(rows.length - 1)}
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center"
+            >
+              <DeleteIcon className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </form>
     </div>

@@ -89,7 +89,7 @@ export const IncomeTracker = () => {
                     className="w-full px-2 py-1 border rounded"
                     required
                   >
-                    <option value=""></option>
+                    <option value="">Choose a Category</option>
                     <option value="business">Business Income</option>
                     <option value="personal">Personal Income</option>
                     <option value="investment">Investment</option>

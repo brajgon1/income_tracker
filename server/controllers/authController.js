@@ -32,7 +32,8 @@ const register = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const { data, error } = await supabase
+    // do I need to add "data" in the const with "error"?
+    const { error } = await supabase
       .from("users")
       .insert([{ name, email, password_hash: hashedPassword }])
       .single();

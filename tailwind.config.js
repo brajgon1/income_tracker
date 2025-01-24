@@ -9,6 +9,7 @@ module.exports = {
         frenchGray: "#B9C0DA",
         roseQuartz: "#998DA0",
         wenge: "#63585E",
+        cyan: "#00B4D8",
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

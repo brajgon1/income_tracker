@@ -1,3 +1,5 @@
+// import gsap from "gsap";
+
 export default function ColeInvite() {
   return (
     <div class="min-h-screen font-poppins flex items-center justify-center bg-gradient-to-r from-roseQuartz to-transparent">

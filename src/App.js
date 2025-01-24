@@ -1,11 +1,13 @@
 import './index.css';
 import './App.css';
-import { IncomeTracker } from './components/IncomeTracker';
+import ColeInvite from './components/ColeInvite';
+// import { IncomeTracker } from './components/IncomeTracker';
 
 function App() {
   return (
     <div className="App">
-      <IncomeTracker />
+      {/* <IncomeTracker /> */}
+      <ColeInvite />
     </div>
   );
 }

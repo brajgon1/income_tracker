@@ -1,59 +1,26 @@
-import { useState } from "react";
+import Carousel from 'react-bootstrap/Carousel';
+import img1 from "./photos/IMG_6751.jpeg";
+import img2 from "./photos/IMG_6774.jpeg";
+import img3 from "./photos/IMG_6851.jpeg";
+import img4 from "./photos/IMG_6894.jpeg";
 
 export default function PhotoCarousel() {
-  const [current, setCurrent] = useState(0);
-
-  const images = [
-    "https://via.placeholder.com/800x400?text=Slide+1",
-    "https://via.placeholder.com/800x400?text=Slide+2",
-    "https://via.placeholder.com/800x400?text=Slide+3",
-  ];
-
-  const prev = () => {
-    setCurrent((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const next = () => {
-    setCurrent((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  const images = [img1, img2, img3, img4];
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto sm:max-w-md">
-      {/* {images} */}
-      <div className="overflow=hidden rounded-lg">
-        <img
-          src={images[current]}
-          alt={`Slide ${current}`}
-          className="w-full object-cover"
-        />
-      </div>
-      <button
-        onClick={prev}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
-      >
-        &#8592;
-      </button>
-      <button
-        onClick={next}
-        className="absolut top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
-      >
-        &#8594;
-      </button>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex-gap-2">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-3 h-3 rounded-full ${
-              i === current ? "bg-blue-500" : "bg-gray-300"
-            }`}
-          ></button>
+    <div className="container mx-auto px-4 sm:px-2">
+      <Carousel fade controls={false} indicators={false} interval={900}>
+        {images.map((img, i) => (
+          <Carousel.Item key={i}>
+            <img
+              src={img}
+              alt={`Slide ${i + 1}`}
+              className="d-block w-100"
+              style={{ maxHeight: "520px", objectFit: "contain" }}
+            />
+          </Carousel.Item>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 }

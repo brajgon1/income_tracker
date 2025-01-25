@@ -4,7 +4,7 @@ import PhotoCarousel from "./Carousel";
 
 export default function ColeInvite() {
   return (
-    <div class="min-h-screen font-poppins flex items-center justify-center bg-gradient-to-r from-roseQuartz to-transparent">
+    <div class="min-h-screen px-10 font-poppins flex flex-col md:flex-row items-center justify-center bg-gradient-to-r from-roseQuartz to-transparent">
       <div class="shadow-lg p-8 w-full max-w-md">
         <h2 class="text-2xl font-semibold text-center mb-4">Party RSVP Form</h2>
         <p class="text-center text-gray-600 mb-6">
@@ -114,7 +114,9 @@ export default function ColeInvite() {
           </div>
         </form>
       </div>
-      <PhotoCarousel />
+      <div className="mt-8 md:mt-0 md:ml-8 w-full max-w-md">
+        <PhotoCarousel />
+      </div>
     </div>
   );
 }

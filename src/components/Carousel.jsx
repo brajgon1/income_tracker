@@ -21,7 +21,7 @@ export default function PhotoCarousel() {
             />
           </Carousel.Item>
         ))}
-        {/* <CarouselCaption></CarouselCaption> maybe? */}
+
       </Carousel>
     </div>
   );

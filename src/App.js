@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 import "./App.css";
-// import ColeInvite from "./components/ColeInvite";
-// import { IncomeTracker } from './components/IncomeTracker';
+import ColeInvite from "./components/InvitePage";
 
 function App() {
 
   return (
     <div className="App">
       {/* <IncomeTracker /> */}
-      {/* <ColeInvite /> */}
+      <ColeInvite />
+
     </div>
   );
 }

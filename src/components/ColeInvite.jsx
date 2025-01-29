@@ -2,7 +2,7 @@
 
 import PhotoCarousel from "./Carousel";
 
-export default function ColeInvite() {
+export default function OldForm() {
   return (
     <div class="min-h-screen px-10 font-poppins flex flex-col md:flex-row items-center justify-center bg-gradient-to-r from-roseQuartz to-transparent">
       <div class="shadow-lg p-8 w-full max-w-md">

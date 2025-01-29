@@ -41,7 +41,9 @@ export default function ColeInvite() {
         ))}
       </div>
 
-      <div className="relative z-10 bg-white bg-opacity-60 p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900">
+      <div 
+      ref={formRef}
+      className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mx-auto mt-8">
         <h2 className="text-2xl font-semibold text-center mb-4">
           RSVP to the Party!
         </h2>

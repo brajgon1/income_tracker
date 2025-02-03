@@ -26,6 +26,8 @@ export default function ColeInvite() {
     );
   });
 
+//   fix state issue with form 
+
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-black text-white">
       <div className="absolute inset-0 z-0 overflow-hidden">

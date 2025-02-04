@@ -22,9 +22,9 @@ export default function ColeInvite() {
     gsap.fromTo(
       formRef.current,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, delay: 3, ease: "power2.out" }
+      { opacity: 1, y: 0, duration: 1, delay: 4, ease: "power2.out" }
     );
-  });
+  }, []);
 
 //   fix state issue with form 
 

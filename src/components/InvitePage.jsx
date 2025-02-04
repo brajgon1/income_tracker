@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { CheckCircleIcon } from "@heroicons/react/solid";
 import img1 from "./photos/IMG_6751.jpeg";
 import img2 from "./photos/IMG_6774.jpeg";
 import img3 from "./photos/IMG_6851.jpeg";
@@ -9,7 +10,9 @@ const images = [img1, img2, img3, img4];
 
 export default function ColeInvite() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
   const formRef = useRef(null);
+  const successRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +29,17 @@ export default function ColeInvite() {
     );
   }, []);
 
-//   fix state issue with form 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    gsap.to(formRef.current, { opacity: 0, y: -30, duration: 0.5, onComplete: () => {
+        setSubmitted(true);
+        gsap.fromTo(
+          successRef.current,
+          { opacity: 0, scale: 0.8 },
+          { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
+        );
+    } });
+  }
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-black text-white">
@@ -43,9 +56,10 @@ export default function ColeInvite() {
         ))}
       </div>
 
-      <div 
-      ref={formRef}
-      className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mx-auto mt-8">
+      <div
+        ref={formRef}
+        className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mx-auto mt-8"
+      >
         <h2 className="text-2xl font-semibold text-center mb-4">
           RSVP to the Party!
         </h2>

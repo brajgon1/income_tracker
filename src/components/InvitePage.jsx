@@ -37,9 +37,24 @@ export default function ColeInvite() {
       duration: 0.5,
       onComplete: () => {
         setSubmitted(true);
-      },
-    });
-  };
+
+        // gsap.fromTo(
+        //     successRef.current,
+        //     { opacity: 0, scale: 0.8 },
+        //     { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
+        //   );
+    
+        //   setTimeout(() => {
+        //     gsap.to(successRef.current, {
+        //       opacity: 0,
+        //       scale: 0.8,
+        //       duration: 1,
+        //       ease: "power2.out",
+        //     });
+        //   }, 5000);
+        },
+      });
+    };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gray-500 text-white">

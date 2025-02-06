@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-// import { CheckCircleIcon } from "@heroicons/react/solid";
+import { CheckCircleIcon } from "@heroicons/react/solid";
 import img1 from "./photos/IMG_6751.jpeg";
 import img2 from "./photos/IMG_6774.jpeg";
 import img3 from "./photos/IMG_6851.jpeg";
@@ -43,7 +43,7 @@ export default function ColeInvite() {
         //     { opacity: 0, scale: 0.8 },
         //     { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
         //   );
-    
+
         //   setTimeout(() => {
         //     gsap.to(successRef.current, {
         //       opacity: 0,
@@ -52,9 +52,9 @@ export default function ColeInvite() {
         //       ease: "power2.out",
         //     });
         //   }, 5000);
-        },
-      });
-    };
+      },
+    });
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gray-500 text-white">
@@ -182,6 +182,7 @@ export default function ColeInvite() {
           ref={successRef}
           className="text-center bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mt-8"
         >
+          <CheckCircleIcon className="w-16 h-16 mx-auto text-green-500" />
           <h2 className="text-2xl font-semibold text-gray-900">Thank You!</h2>
           <p className="text-gray-600">
             Please check your email for party details.

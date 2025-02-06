@@ -181,6 +181,7 @@ export default function ColeInvite() {
         <div
           ref={successRef}
           className="text-center bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mt-8"
+          style={{ opacity: 0 }}
         >
           <CheckCircleIcon className="w-16 h-16 mx-auto text-green-500" />
           <h2 className="text-2xl font-semibold text-gray-900">Thank You!</h2>

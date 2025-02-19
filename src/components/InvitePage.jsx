@@ -31,29 +31,31 @@ export default function ColeInvite() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     gsap.to(formRef.current, {
       opacity: 0,
-      scale: 0.5,
+      y: -30,
       duration: 0.5,
       onComplete: () => {
         setSubmitted(true);
 
-        // gsap.fromTo(
-        //     successRef.current,
-        //     { opacity: 0, scale: 0.8 },
-        //     { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
-        //   );
-
-        //   setTimeout(() => {
-        //     gsap.to(successRef.current, {
-        //       opacity: 0,
-        //       scale: 0.8,
-        //       duration: 1,
-        //       ease: "power2.out",
-        //     });
-        //   }, 5000);
-      },
-    });
+        gsap.fromTo(
+          successRef.current,
+          { opacity: 0, scale: 0.8 },
+          { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
+        );
+        
+        setTimeout(() => {
+          gsap.to(successRef.current, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            ease: "power2.out",
+            onComplete: () => setSubmitted(false),
+          });
+        }, 5000);
+      }
+    })
   };
 
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { CheckCircleIcon } from "@heroicons/react/solid";
+// import { CheckCircleIcon } from "@heroicons/react/solid";
 import img1 from "./photos/IMG_6751.jpeg";
 import img2 from "./photos/IMG_6774.jpeg";
 import img3 from "./photos/IMG_6851.jpeg";
@@ -32,34 +32,26 @@ export default function ColeInvite() {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    // Fade out the form
     gsap.to(formRef.current, {
       opacity: 0,
       y: -30,
       duration: 0.5,
       onComplete: () => {
-        setSubmitted(true);
+        setSubmitted(true); // Switch to success message
 
+        // Fade in success message
         gsap.fromTo(
           successRef.current,
           { opacity: 0, scale: 0.8 },
-          { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
+          { opacity: 2, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
         );
-        
-        setTimeout(() => {
-          gsap.to(successRef.current, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1,
-            ease: "power2.out",
-            onComplete: () => setSubmitted(false),
-          });
-        }, 5000);
-      }
-    })
+      },
+    });
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gray-500 text-white">
+    <div className="relative min-h-screen flex items-center justify-center bg-black text-white">
       <div className="absolute inset-0 z-0 overflow-hidden">
         {images.map((img, index) => (
           <img
@@ -73,7 +65,17 @@ export default function ColeInvite() {
         ))}
       </div>
 
-      {!submitted ? (
+      {submitted ? (
+        // Success message that stays visible
+        <div
+          ref={successRef}
+          className="bg-green-500 text-white p-6 rounded-lg shadow-lg w-full max-w-md text-center mx-auto mt-8"
+          style={{ opacity: 0 }}
+        >
+          ✅ Please check your email for party details!
+        </div>
+      ) : (
+        // RSVP Form
         <div
           ref={formRef}
           className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mx-auto mt-8"
@@ -82,7 +84,7 @@ export default function ColeInvite() {
             RSVP to the Party!
           </h2>
           <p className="text-center text-gray-600 mb-6">
-            Want to Party with Cole? let us know you're coming!
+            Want to Party with Cole? Let us know you're coming!
           </p>
           <form onSubmit={submitHandler}>
             <div className="flex mb-4">
@@ -98,6 +100,7 @@ export default function ColeInvite() {
                   id="first-name"
                   name="first-name"
                   className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
               <div className="w-1/2 pl-2">
@@ -112,6 +115,7 @@ export default function ColeInvite() {
                   id="last-name"
                   name="last-name"
                   className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
             </div>
@@ -127,6 +131,7 @@ export default function ColeInvite() {
                 id="email"
                 name="email"
                 className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
             </div>
             <div className="mb-4">
@@ -155,6 +160,7 @@ export default function ColeInvite() {
                     name="attendance"
                     value="yes"
                     className="focus:ring-blue-500"
+                    required
                   />
                   <span>Yes</span>
                 </label>
@@ -164,32 +170,21 @@ export default function ColeInvite() {
                     name="attendance"
                     value="no"
                     className="focus:ring-red-500"
+                    required
                   />
                   <span>No</span>
                 </label>
               </div>
             </div>
-            <div className="flex-justify-center">
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:blue-blue-600 focus:ring-2 focus:ring-blue-500"
+                className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
               >
                 Submit
               </button>
             </div>
           </form>
-        </div>
-      ) : (
-        <div
-          ref={successRef}
-          className="text-center bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900 mt-8"
-          style={{ opacity: 0 }}
-        >
-          <CheckCircleIcon className="w-16 h-16 mx-auto text-green-500" />
-          <h2 className="text-2xl font-semibold text-gray-900">Thank You!</h2>
-          <p className="text-gray-600">
-            Please check your email for party details.
-          </p>
         </div>
       )}
     </div>

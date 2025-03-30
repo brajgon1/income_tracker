@@ -9,7 +9,7 @@ const images = [img1, img2, img3, img4];
 
 export default function ColeInvite() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [showMessage, setShowMessage] = useState(true);
+  const [showMessage, setShowMessage] = useState(false);
   const messageRef = useRef(null);
 
   useEffect(() => {
@@ -17,6 +17,13 @@ export default function ColeInvite() {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessage(true);
+    }, 4000);
+    return () => clearTimeout(timer)
   }, []);
 
   useEffect(() => {
@@ -32,13 +39,13 @@ export default function ColeInvite() {
   return (
     <div className="relative min-h-screen d-flex align-items-center justify-content-center bg-dark text-white">
       <div className="position-absolute w-100 h-100 overflow-hidden">
-        {images.map((img, index) => (
+        {images.map((img, i) => (
           <img
-            key={index}
+            key={i}
             src={img}
-            alt={`Slide ${index + 1}`}
+            alt={`Slide ${i + 1}`}
             className={`position-absolute w-100 h-100 object-fit-contain transition-opacity ${
-              index === currentImage ? "opacity-100" : "opacity-0"
+              i === currentImage ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}

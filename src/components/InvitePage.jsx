@@ -61,7 +61,7 @@ export default function ColeInvite() {
           className="absolute top-2 right-2 text-gray-700 hover:text-gray-900"
           aria-label="Close"
         >✖</button>
-        <h2 className="text-2xl font-bold text-blue-600">You're Invited! 🎉</h2>
+        <h2 className="text-2xl font-bold text-blue-600">Cole is turning 2! 🎉</h2>
         <p className="text-lg text-gray-700 mt-2">Join us for an unforgettable day of fun and celebration!</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>

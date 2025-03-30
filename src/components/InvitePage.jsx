@@ -3,9 +3,12 @@ import img1 from "./photos/IMG_6751.jpeg";
 import img2 from "./photos/IMG_6774.jpeg";
 import img3 from "./photos/IMG_6851.jpeg";
 import img4 from "./photos/IMG_6894.jpeg";
+import img5 from "./photos/IMG_5928.jpeg";
+import img6 from "./photos/IMG_7819.jpeg";
+import img7 from "./photos/IMG_7919.jpeg";
 import gsap from "gsap";
 
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5, img6, img7];
 
 export default function ColeInvite() {
   const [currentImage, setCurrentImage] = useState(0);

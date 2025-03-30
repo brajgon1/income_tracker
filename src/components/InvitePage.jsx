@@ -54,7 +54,7 @@ export default function ColeInvite() {
             key={i}
             src={img}
             alt={`Slide ${i + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
               i === currentImage ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -70,6 +70,7 @@ export default function ColeInvite() {
             <h2 className="text-2xl font-bold text-blue-600">
               Thank you for RSVPing! 🎉
             </h2>
+            
           ) : (
             <>
               <h2 className="text-2xl font-bold text-blue-600">

@@ -71,7 +71,7 @@ export default function ColeInvite() {
           </div>
           <div>
             <p className="text-sm font-semibold text-gray-900">🕒 Time:</p>
-            <p className="text-sm text-gray-600">1:00 PM - 3:30 PM</p>
+            <p className="text-sm text-gray-600">2:00 PM - 5:00 PM</p>
             <p className="text-sm font-semibold text-gray-900">📅 Date:</p>
             <p className="text-sm text-gray-600">Saturday, April 12, 2025</p>
           </div>

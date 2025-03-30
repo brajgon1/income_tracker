@@ -23,7 +23,7 @@ export default function ColeInvite() {
     const timer = setTimeout(() => {
       setShowMessage(true);
     }, 4000);
-    return () => clearTimeout(timer)
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -53,26 +53,35 @@ export default function ColeInvite() {
 
       {showMessage && (
         <div
-          ref={messageRef}
-          className="position-relative bg-light bg-opacity-90 p-4 rounded shadow-lg text-dark text-center w-50 mx-auto border border-primary"
-        >
-          <button
-            onClick={() => setShowMessage(false)}
-            className="btn-close position-absolute top-0 end-0 m-3"
-            aria-label="Close"
-          ></button>
-          <h2 className="fw-bold text-primary">You're Invited! 🎉</h2>
-          <p className="fs-5 text-secondary">
-            Join us for an unforgettable day of fun and celebration!
-          </p>
-          <p className="fs-6">
-            RSVP to 385-309-7172 or brajgon@gmail.com
-          </p>
-          <a href="mailto:contact@example.com" className="btn btn-primary mt-3">
-            Contact Us
-          </a>
+        ref={messageRef}
+        className="relative bg-white bg-opacity-90 p-6 rounded-lg shadow-lg text-gray-900 text-center w-full max-w-2xl mx-4 border border-blue-500 md:w-3/4 lg:w-1/2"
+      >
+        <button
+          onClick={() => setShowMessage(false)}
+          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900"
+          aria-label="Close"
+        >✖</button>
+        <h2 className="text-2xl font-bold text-blue-600">You're Invited! 🎉</h2>
+        <p className="text-lg text-gray-700 mt-2">Join us for an unforgettable day of fun and celebration!</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div>
+            <p className="text-sm font-semibold text-gray-900">📍 Location:</p>
+            <p className="text-sm text-gray-600">150 S 2000 W, N County Blvd</p>
+            <p className="text-sm text-gray-600">Pleasant Grove, UT 84062</p>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-gray-900">🕒 Time:</p>
+            <p className="text-sm text-gray-600">1:00 PM - 3:30 PM</p>
+            <p className="text-sm font-semibold text-gray-900">📅 Date:</p>
+            <p className="text-sm text-gray-600">Saturday, April 12, 2025</p>
+          </div>
         </div>
-      )}
-    </div>
+        <hr className="my-4" />
+        <p className="text-sm font-semibold text-gray-900">📩 RSVP:</p>
+        <p className="text-sm text-gray-600">Text: 385-309-7172 | Email: brajgon@gmail.com</p>
+        <a href="mailto:brajgon@gmail.com" className="mt-3 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">RSVP</a>
+      </div>
+    )}
+  </div>
   );
 }

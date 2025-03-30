@@ -74,7 +74,7 @@ export default function ColeInvite() {
           ) : (
             <>
               <h2 className="text-2xl font-bold text-blue-600">
-                You're Invited! 🎉
+                Cole is turning 2! 🎉
               </h2>
               <p className="text-lg text-gray-700 mt-2">
                 Join us for an unforgettable day of fun and celebration!
